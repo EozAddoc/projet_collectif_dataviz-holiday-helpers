@@ -70,6 +70,45 @@
           });
       }
       getGhg();
+      function fire() {
+        fetch(
+          "https://api.ambeedata.com/latest/fire?lat=12.9889055&lng=77.574044",
+          {
+            method: "GET",
+            headers: {
+              "x-api-key":
+                "0b6971e42ac3de1fc7283214f67e40a0638921c67ffee69fd130f4bd301f6e24",
+              "Content-type": "application/json",
+            },
+          }
+        )
+          .then((response) => {
+            console.log(response.json());
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
+
+      function pollen() {
+        fetch(
+          "https://api.ambeedata.com/latest/pollen/by-lat-lng?lat=12.9889055&lng=77.574044",
+          {
+            method: "GET",
+            headers: {
+              "x-api-key":
+                "0b6971e42ac3de1fc7283214f67e40a0638921c67ffee69fd130f4bd301f6e24",
+              "Content-type": "application/json",
+            },
+          }
+        )
+          .then((response) => {
+            console.log(response.json());
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
     </script>
   </body>
 </html>
