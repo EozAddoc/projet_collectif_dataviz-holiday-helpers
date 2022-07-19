@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docum</title>
+</head>
+<body>
+    <script>
+
+        function air (){
+       fetch("https://api.ambeedata.com/latest/by-city?city=Bengaluru", {
+	 "method": "GET",
+	 "headers": {
+		"x-api-key": 'f3485603ffc14991847cb3fc7714a4a64a77a04ebe15afbe92087e774675e7c9',
+		"Content-type": "application/json"
+	}
+})
+.then(response => {
+	console.log(response.json());
+})
+.catch(err => {
+	console.error(err);
+});
+
+        }
+
+        function water() {
+
+     fetch('https://hubeau.eaufrance.fr/api/v1/temperature/api-docs')
+     .then(res => console.log(res.json()));
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
