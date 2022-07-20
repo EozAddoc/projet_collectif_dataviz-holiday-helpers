@@ -1,0 +1,12 @@
+.container {
+  font-family: arial;
+  font-weight: bold;
+  color: #800080;
+  border: 5px solid #800080;
+  width: 340px;
+  padding: 10px;
+  text-align: center;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
