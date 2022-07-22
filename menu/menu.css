@@ -44,7 +44,7 @@
   position: relative;
 }
 .navbar ul li a {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   color: #fff;
@@ -74,7 +74,7 @@
   border: 2px solid red;
 }
 .content p {
-  font-size: 30px;
+  font-size: 20px;
   /*margin: 20px auto;*/
   font-weight: 100;
   line-height: 40px;
