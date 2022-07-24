@@ -74,6 +74,7 @@ font-display: normal;
   }
   .partTwo {
     position: relative;
+    bottom:500px
   }
   .partTwo h1 {
     width:100%;
@@ -87,9 +88,31 @@ font-display: normal;
     font-family: 'Oswald', sans-serif
   }
 
-   .partThree{
+   .Fact{
      position: relative;
+     left: 1000px;
+     bottom: 800px;
    }
+   .Fact1{
+     position: relative;
+     left: 900px;
+     bottom: 1300px;
+   }
+   .Fact2{
+    position: relative;
+    left: 1350px;
+    bottom: 1590px;
+  }
+  .Fact3{
+    position: relative;
+    left: 900px;
+    bottom: 1500px;
+  }
+  .Fact4{
+    position: relative;
+    left: 1350px;
+    bottom: 1790px;
+  }
   
    .form{
      position: relative;
@@ -110,6 +133,7 @@ font-display: normal;
      right: 13px;
      top: 50px;
    }
+
 
 
 
