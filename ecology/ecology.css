@@ -1,0 +1,156 @@
+/* map */
+#map { height: 500px;
+width: 800px ;
+position: relative;
+left: 100px
+
+ }
+ #pollens{
+   height: 50px;
+   width:50px;
+ }
+ #airplane{
+  height: 50px;
+  width:50px
+}
+#hot{
+  height: 50px;
+  width:50px
+}
+#GHG{
+  height: 50px;
+  width:50px
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+    align-items: center;
+  background: 
+    url(vacay/image7.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+} 
+
+ .banner h1 {
+  width:100%;
+  position: relative;
+  left: 30px;
+  font-size: 9vw;
+font-display: bold;
+  color: black;
+  text-align: center left;
+  font-family: 'Oswald', sans-serif
+}
+ .partOne {
+    position: relative;
+  }
+  .partOne p {
+    width:100%;
+  position: relative;
+  left: 600px;
+  bottom: 400px;
+  font-size: 1.5vw;
+font-display: normal;
+  color: black;
+  text-align: left;
+  font-family: sans-serif
+
+  }
+  .container{
+    width:100%;
+    position: relative;
+    top: -450px;
+    right: -250px;
+    font-size: 4vw;
+    color: black;
+    text-align: center;
+    font-family:'Oswald', sans-serif;
+
+    
+  }
+  .partTwo {
+    position: relative;
+    bottom:500px
+  }
+  .partTwo h1 {
+    width:100%;
+    position: relative;
+    left: 50px;
+    top: -300px;
+    font-size: 5vw;
+    font-display: bold;
+    color: black;
+    text-align: left;
+    font-family: 'Oswald', sans-serif
+  }
+
+   .Fact{
+     position: relative;
+     left: 1000px;
+     bottom: 800px;
+   }
+   .Fact1{
+     position: relative;
+     left: 900px;
+     bottom: 1300px;
+   }
+   .Fact2{
+    position: relative;
+    left: 1350px;
+    bottom: 1590px;
+  }
+  .Fact3{
+    position: relative;
+    left: 900px;
+    bottom: 1500px;
+  }
+  .Fact4{
+    position: relative;
+    left: 1350px;
+    bottom: 1790px;
+  }
+  
+   .form{
+     position: relative;
+     left: 970px;
+     bottom: 500px;
+   }
+   .form_label{
+     position: relative;
+     background: rgb(249, 249, 249);
+     border-radius: 5px;
+     display: flex;
+     padding: 10px 10px; 
+     cursor:pointer;
+     transition: 3s;
+   }
+   .form_input{
+     position: relative;
+     right: 13px;
+     top: 50px;
+   }
+   .traveler{
+     position: relative;
+     background-color: whitesmoke;
+     bottom:450px
+   }
+
+   .traveler h1{
+    width:100%;
+    position: relative;
+    font-size: 5vw;
+    background-color: darkolivegreen;
+    font-display: bold;
+    color: black;
+    text-align: center ;
+    font-family: 'Oswald', sans-serif
+   }
+
+
+
+
+
