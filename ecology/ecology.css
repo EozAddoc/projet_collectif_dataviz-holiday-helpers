@@ -5,7 +5,7 @@ position: relative;
 left: 100px
 
  }
- #pollen{
+ #pollens{
    height: 50px;
    width:50px;
  }
@@ -132,6 +132,22 @@ font-display: normal;
      position: relative;
      right: 13px;
      top: 50px;
+   }
+   .traveler{
+     position: relative;
+     background-color: whitesmoke;
+     bottom:450px
+   }
+
+   .traveler h1{
+    width:100%;
+    position: relative;
+    font-size: 5vw;
+    background-color: darkolivegreen;
+    font-display: bold;
+    color: black;
+    text-align: center ;
+    font-family: 'Oswald', sans-serif
    }
 
 
