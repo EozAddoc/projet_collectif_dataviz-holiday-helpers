@@ -1,0 +1,264 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, height=device-height,
+    initial-scale=0.67, maximum-scale=0.67, user-scalable=no"/>
+    <title>Docum</title>
+    <link rel="stylesheet" href="menu.css" />
+  </head>
+  <body onLoad="renderTime();">
+    <div class="banner">
+      <div class="navbar">
+        <img
+          src="photosForWebsite/logo.jpeg"
+          class="logo"
+          width="100"
+          height="166"
+          -webkit-border-radius:
+          10px;
+          -moz-border-radius:
+          10px;
+          border-radius:
+          10px;
+        />
+        <div class="popup" id="air_quality">
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="close-btn" onclick="togglePopupAqi()">&times;
+        </div>
+            <h1>Air Quality</h1>
+            <p>The air quality index (AQI) is an index for reporting air quality on a daily basis. It is a measure of how air pollution affects one's health within a short time period. The purpose of the AQI is to help people know how the local air quality impacts their health. The Environmental Protection Agency (EPA) calculates the AQI for five major air pollutants, for which national air quality standards have been established to safeguard public health.<br>
+              1. Ground-level ozone<br>
+              2. Particle pollution/particulate matter (PM2.5/pm 10)<br>
+              3. Carbon Monoxide<br>
+              4. Sulfur dioxide<br>
+              5. Nitrogen dioxide<a href="https://www.business-standard.com/about/what-is-air-quality-index" target="_blank">[6]</a>
+            </p>
+          </div>
+        </div>
+        <div class="popup" id="fire_risk">
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="close-btn" onclick="togglePopupFr()">&times;
+        </div>
+            <h1>Fire Risk</h1>
+            <p>Larger and more intense wildfires are creating the potential for greater smoke production and chronic exposures. Wildfires increase air pollution in surrounding areas and can affect regional air quality.The effects of smoke from wildfires can range from eye and respiratory tract irritation to more serious disorders, including reduced lung function, bronchitis, exacerbation of asthma and heart failure, and premature death. Children, pregnant women, and the elderly are especially vulnerable to smoke exposure. Emissions from wildfires are known to cause increased visits to hospitals and clinics by those exposed to smoke.<a href="https://www.epa.gov/air-research/wildland-fire-research-health-effects-research" target="_blank">[2]</a>
+            </p>
+          </div>
+        </div>
+        <div class="popup" id="ghg_emissions">
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="close-btn" onclick="togglePopupGhg()">&times;
+        </div>
+            <h1>GHG Emissions</h1>
+            <p>Gases that trap heat in the atmosphere are called greenhouse gases. Concentration, or abundance, is the amount of a particular gas in the air. Larger emissions of greenhouse gases lead to higher concentrations in the atmosphere. Greenhouse gas concentrations are measured in parts per million, parts per billion, and even parts per trillion.<a href="https://www.epa.gov/ghgemissions/overview-greenhouse-gases " target="_blank">[4]</a> The climate change caused by greenhouse gas emissions also contributes to extreme weather, wildfires, droughts and food supply disruptions.<a href="https://www.inspirecleanenergy.com/blog/clean-energy-101/what-are-greenhouse-gases" target="_blank">[5]</a>
+            </p>
+          </div>
+        </div>
+        <div class="popup" id="pollen">
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="close-btn" onclick="togglePopupPol()">&times;
+        </div>
+            <h1>Pollen</h1>
+            <p>Pollen count is a measure of the average number of pollen grains per cubic meter squared. It’s usually recorded during the day, so pollen count forecasts are likely to reflect daytime figures too. If you suffer from seasonal allergies, sometimes referred to as hay fever, pollen count can make a big difference to how severe they are. Predicting pollen conditions could help you to better plan for them – whether that’s by taking a antihistamine or skipping that mid-afternoon cycle ride.<a href="https://www.zyrtec.com/allergy-guide/outdoors/best-times-low-pollen-count" target="_blank">[1]</a>
+            </p>
+          </div>
+        </div>
+        <div class="popup" id="temperature">
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="close-btn" onclick="togglePopupTemp()">&times;
+        </div>
+            <h1>Temperature</h1>
+            <p>The weather of the last few weeks has been completely devoid of nuance - hot, hot, hot and hot, in that order. You may have forgotten that there are temperatures outside the sweaty bracket of "low Thirties Celsius, and the office air-conditioning is broken". But which temperatures, exactly? And more to the point, in which do you feel most comfortable - to the extent that you might hop onto a plane to find them? With help from The Holday Helpers, you can locate the ideal destination with the ideal temperature.<a href="https://www.telegraph.co.uk/travel/advice/ideal-travel-temperature-tobago-dubai-greece-croatia/">[3]</a>
+            </p>
+          </div>
+        </div>
+        <div class="popup" id="water_temperature">
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="close-btn" onclick="togglePopupWt()">&times;
+        </div>
+            <h1>Water Temperature</h1>
+            <p>Temperature is an important factor to consider when assessing water quality. In addition to its own effects, temperature influences several other parameters and can alter the physical and chemical properties of water. In this regard, water temperature should be accounted for when determining:<br>
+              – Metabolic rates and photosynthesis production<br>
+              – Compound toxicity<br>
+              – Dissolved oxygen and other dissolved gas concentrations<br>
+              – Conductivity and salinity<br>
+              – Oxidation reduction potential (ORP)<br>
+              – pH<br>
+              – Water Density<a href="https://www.fondriest.com/environmental-measurements/parameters/water-quality/water-temperature/" target="_blank">[7]</a>
+            </p>
+          </div>
+        </div>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#"><button class="button" onclick="togglePopupAqi()">Air Quality</a></button></li>
+            <li><a href="#"><button class="button" onclick="togglePopupFr()">Fire Risk</a></button></li>
+            <li><a href="#"><button class="button" onclick="togglePopupGhg()">GHG Emissions</a></button></li>
+            <li><a href="#"><button class="button" onclick="togglePopupPol()">Pollen</a></button></li>
+            <li><a href="#"><button class="button" onclick="togglePopupTemp()">Temperature</a></button></li>
+            <li><a href="#"><button class="button" onclick="togglePopupWt()">Water Temperature</a></button></li>
+          </ul>
+      </div>
+      <div class="content">
+        <div>
+          <h1>IMPORTANT ENVIRONMENTAL INDICATORS</h1>
+          <p>Search below to become aware of the important
+            environmental information on any given place. <br>This allows you to make a more informed decision on where to
+            spend your holidays.</p>
+          </p>
+        </div>
+        <div class="container">
+          <form action="" method="get" class="search-bar">
+            <input type="text" placeholder="Country or city.." name="q">
+            <button type="submit"><img src="photosForWebsite/chercher.png" width="60"
+              height="60"></button>
+          </form>
+        </div> 
+      </div>
+      
+    </div>
+    <!--<div id="clockDisplay" class="container"></div>-->
+    <script type="text/javascript" src="getTime.js"></script>
+    <script>
+      function air() {
+        fetch("https://api.ambeedata.com/latest/by-lat-lng?lat=12&lng=77", {
+          method: "GET",
+          headers: {
+            "x-api-key":
+              "0b6971e42ac3de1fc7283214f67e40a0638921c67ffee69fd130f4bd301f6e24",
+            "Content-type": "application/json",
+          },
+        })
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data.stations[0].lat);
+            console.log(data.stations[0].lng);
+            console.log(data.stations[0].AQI);
+            console.log(data.stations[0].aqiInfo.category);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
+      air();
+      function water() {
+        fetch("https://hubeau.eaufrance.fr/api/v1/temperature/api-docs").then(
+          (res) => console.log(res.json())
+        );
+      }
+
+      function getMeteo() {
+        fetch(
+          "https://api.ambeedata.com/weather/latest/by-lat-lng?lat=12&lng=77",
+          {
+            method: "GET",
+            headers: {
+              "x-api-key":
+                "733803cf88f90a7486548ce9580f0cf1b52ae6e8746624ca4a795e3f2754c421",
+              "Content-type": "application/json",
+            },
+          }
+        )
+          .then((response) => {
+            //console.log(response.json());
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data.data.lat);
+            console.log(data.data.lng);
+            console.log(data.data.temperature);
+          })
+
+          .catch((err) => {
+            console.error(err);
+          });
+      }
+      //getMeteo();
+      function getGhg() {
+        fetch(
+          "https://api.ambeedata.com/latest/by-lat-lng?lat=12.9889055&lng=77.574044",
+          {
+            method: "GET",
+            headers: {
+              "x-api-key":
+                "733803cf88f90a7486548ce9580f0cf1b52ae6e8746624ca4a795e3f2754c421",
+              "Content-type": "application/json",
+            },
+          }
+        )
+          .then((response) => {
+            return response.json();
+          })
+
+          .catch((err) => {
+            console.error(err);
+          });
+      }
+      //getGhg();
+      function fire() {
+        fetch(
+          "https://api.ambeedata.com/latest/fire?lat=12.9889055&lng=77.574044",
+          {
+            method: "GET",
+            headers: {
+              "x-api-key":
+                "0b6971e42ac3de1fc7283214f67e40a0638921c67ffee69fd130f4bd301f6e24",
+              "Content-type": "application/json",
+            },
+          }
+        )
+          .then((response) => {
+            console.log(response.json());
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
+
+      function pollen() {
+        fetch(
+          "https://api.ambeedata.com/latest/pollen/by-lat-lng?lat=12.9889055&lng=77.574044",
+          {
+            method: "GET",
+            headers: {
+              "x-api-key":
+                "0b6971e42ac3de1fc7283214f67e40a0638921c67ffee69fd130f4bd301f6e24",
+              "Content-type": "application/json",
+            },
+          }
+        )
+          .then((response) => {
+            console.log(response.json());
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
+      function togglePopupAqi(){
+        document.getElementById("air_quality").classList.toggle("active");
+      }
+      function togglePopupFr(){
+        document.getElementById("fire_risk").classList.toggle("active");
+      }
+      function togglePopupGhg(){
+        document.getElementById("ghg_emissions").classList.toggle("active");
+      }
+      function togglePopupPol(){
+        document.getElementById("pollen").classList.toggle("active");
+      }
+      function togglePopupTemp(){
+        document.getElementById("temperature").classList.toggle("active");
+      }
+      function togglePopupWt(){
+        document.getElementById("water_temperature").classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
