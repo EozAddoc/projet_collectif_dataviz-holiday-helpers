@@ -1,7 +1,8 @@
 var banner = document.querySelector("banner");
-
+var lati
+var longi
 //THe data
-const airAPi = " https://api.ambeedata.com/latest/by-city?city=${city}";
+const airAPi = " https://api.ambeedata.com/latest/by-lat-lng?lat=12&lng=77";
 const weatherAPi =
   "https://api.ambeedata.com/weather/latest/by-lat-lng?lat=12&lng=17";
 const pollenApi =
@@ -11,31 +12,51 @@ const pollenApi =
 
 // Map tile imagery
 
-var map = L.map("map").setView([0, 0], 2);
+var map = L.map("map")
+map.setView([0, 0], 2);
 
 //OSM layer
-var OpenStreetMap_France = L.tileLayer(
-  "https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png",
-  {
-    maxZoom: 20,
-    attribution:
-      '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  }
-);
 
-OpenStreetMap_France.addTo(map);
+
+var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
+
+OpenStreetMap_Mapnik.addTo(map);
+ 
+function searchBar(){
+  var geocoder = L.Control.geocoder()
+    .on('markgeocode', function(e) {
+      var bbox = e.geocode.bbox;
+      var poly = L.polygon([
+        bbox.getSouthEast(),
+        bbox.getNorthEast(),
+        bbox.getNorthWest(),
+        bbox.getSouthWest()
+      ]).addTo(map);
+      var z =map.fitBounds(poly.getBounds());
+      lati =(z._renderer._center.lat)
+      longi=(z._renderer._center.lng)
+      console.log(lati)
+       return(z._renderer._center.lat, z._renderer._center.lng)
+    })
+    .addTo(map);
+}
+ searchBar()
+
+
+
 
 //markers
-const marker = L.marker([0, 0]).addTo(map);
+ let marker = L.marker([0, 0]).addTo(map);
+// //console.log(marker.getLatLng())
 
-L.Control.geocoder().addTo(map);
 
-// Control 2: This add a scale to the map
-L.control.scale().addTo(map);
 
-//  // Control 3: This add a Search bar
-var searchControl = new L.Controls.Geosearch().addTo(map);
 
+
+ 
 //Geolocalisation
 async function myPosition() {
   const lat = navigator.geolocation.watchPosition((position) => {
@@ -50,14 +71,13 @@ async function myPosition() {
     iconUrl: 'markers/street.png',
     iconSize: [38, 40],
     iconAnchor: [22, 94],
-    popupAnchor: [-3, -76],
 });
-  L.marker([lat, lng],{icon: myIcon}).addTo(map);
 }
 //myPosition()
 
-async function air() {
-  const response = await fetch(airAPi, {
+async function air(lati, longi) {
+  url = `https://api.ambeedata.com/latest/by-lat-lng?lat=${lati}&lng=${longi}`;
+  const response = await fetch(url, {
     method: "GET",
     headers: {
       "x-api-key":
@@ -80,10 +100,9 @@ async function air() {
     iconUrl: 'markers/co2.png',
     iconSize: [38, 95],
     iconAnchor: [22, 94],
-    popupAnchor: [-3, -76],
 });
   
-  marker.setLatLng([lat, lng],{icon:myIcon});
+  new marker.setLatLng([lat, lng],{icon:myIcon});
 }
 //air();
 
@@ -104,9 +123,8 @@ async function getMeteo() {
     iconUrl: 'markers/hot.png',
     iconSize: [38, 95],
     iconAnchor: [22, 94],
-    popupAnchor: [-3, -76],
 });
-marker.setLatLng([lat, lng]);
+new marker.setLatLng([lat, lng]);
 }
 //getMeteo();
 
@@ -114,9 +132,10 @@ marker.setLatLng([lat, lng]);
 //   
 // flights();
 
-async function pollen() {
+async function pollen(lati, longi) {
   console.log("hi")
-  const res = await fetch(pollenApi, {
+  url = `https://api.ambeedata.com/latest/pollen/by-lat-lng?lat=${lati}&lng=${longi}`;
+  const res = await fetch(url, {
     method: "GET",
     headers: {
       "x-api-key":
@@ -130,7 +149,7 @@ async function pollen() {
   const { lat, lng } = data;
   
  
-  marker.setLatLng([lat, lng]);
+  new marker.setLatLng([lat, lng]);
 }
 
 
@@ -227,3 +246,4 @@ function renderTime() {
   setTimeout("renderTime()", 1000);
 }
 renderTime();
+
