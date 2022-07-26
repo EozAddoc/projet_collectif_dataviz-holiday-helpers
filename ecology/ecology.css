@@ -145,11 +145,30 @@ font-display: normal;
     font-size: 5vw;
     background-color: darkolivegreen;
     font-display: bold;
-    color: black;
+    color: white;
     text-align: center ;
     font-family: 'Oswald', sans-serif
    }
 
+   .move{
+     position: relative;
+     top:120px
+
+   }
+
+   .move ul h3{
+     position: relative;
+     left:10px
+   }
+   .move ul h4{
+     position: relative;
+     left: 20px;
+   }
+
+   .move ul h5{
+    position: relative;
+    left: 20px;
+   }
 
 
 

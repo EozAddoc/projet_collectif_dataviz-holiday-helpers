@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, user-scalable=no"/>
     <title>Docum</title>
-    <link rel="stylesheet" href="menu/menu.css" />
+    <link rel="stylesheet" href="menu/menu_final.css" />
   </head>
   <body onLoad="renderTime();">
     <div class="banner">
@@ -22,7 +22,7 @@
           10px;
         />
         <ul>
-          <li><a href="#">About us</a></li>
+          <li><button type="button" onclick="location.href='http://127.0.0.1:5500/aboutUs/aboutUs.html'" style="background-color:transparent; border:transparent"><a href="#">About us</a></button></li>
           <li><a href="#"><button class="button" onclick="togglePopupAqi()">Air Quality</a></button></li>
           <li><a href="#"><button class="button" onclick="togglePopupFr()">Fire Risk</a></button></li>
           <li><a href="#"><button class="button" onclick="togglePopupGhg()">GHG Emissions</a></button></li>
@@ -113,7 +113,7 @@
           <div class="container">
             <form action="" method="get" class="search-bar">
               <input type="text" placeholder="Country or city.." name="q">
-              <button type="submit"><img src="menu/photosForWebsite/chercher.png" width="60"
+              <button type="button" onclick="location.href='http://127.0.0.1:5500/ecology/ecology.html'"><img src="menu/photosForWebsite/chercher.png" width="60"
                 height="60"></button>
             </form>
           </div>
@@ -121,124 +121,7 @@
       </div>  
     </div>
     <!--<div id="clockDisplay" class="container"></div>-->
-    <script type="text/javascript" src="getTime.js"></script>
     <script>
-      function air() {
-        fetch("https://api.ambeedata.com/latest/by-lat-lng?lat=12&lng=77", {
-          method: "GET",
-          headers: {
-            "x-api-key":
-              "0b6971e42ac3de1fc7283214f67e40a0638921c67ffee69fd130f4bd301f6e24",
-            "Content-type": "application/json",
-          },
-        })
-          .then((response) => {
-            return response.json();
-          })
-          .then((data) => {
-            console.log(data.stations[0].lat);
-            console.log(data.stations[0].lng);
-            console.log(data.stations[0].AQI);
-            console.log(data.stations[0].aqiInfo.category);
-          })
-          .catch((err) => {
-            console.error(err);
-          });
-      }
-      air();
-      function water() {
-        fetch("https://hubeau.eaufrance.fr/api/v1/temperature/api-docs").then(
-          (res) => console.log(res.json())
-        );
-      }
-
-      function getMeteo() {
-        fetch(
-          "https://api.ambeedata.com/weather/latest/by-lat-lng?lat=12&lng=77",
-          {
-            method: "GET",
-            headers: {
-              "x-api-key":
-                "733803cf88f90a7486548ce9580f0cf1b52ae6e8746624ca4a795e3f2754c421",
-              "Content-type": "application/json",
-            },
-          }
-        )
-          .then((response) => {
-            //console.log(response.json());
-            return response.json();
-          })
-          .then((data) => {
-            console.log(data.data.lat);
-            console.log(data.data.lng);
-            console.log(data.data.temperature);
-          })
-
-          .catch((err) => {
-            console.error(err);
-          });
-      }
-      //getMeteo();
-      function getGhg() {
-        fetch(
-          "https://api.ambeedata.com/latest/by-lat-lng?lat=12.9889055&lng=77.574044",
-          {
-            method: "GET",
-            headers: {
-              "x-api-key":
-                "733803cf88f90a7486548ce9580f0cf1b52ae6e8746624ca4a795e3f2754c421",
-              "Content-type": "application/json",
-            },
-          }
-        )
-          .then((response) => {
-            return response.json();
-          })
-
-          .catch((err) => {
-            console.error(err);
-          });
-      }
-      //getGhg();
-      function fire() {
-        fetch(
-          "https://api.ambeedata.com/latest/fire?lat=12.9889055&lng=77.574044",
-          {
-            method: "GET",
-            headers: {
-              "x-api-key":
-                "0b6971e42ac3de1fc7283214f67e40a0638921c67ffee69fd130f4bd301f6e24",
-              "Content-type": "application/json",
-            },
-          }
-        )
-          .then((response) => {
-            console.log(response.json());
-          })
-          .catch((err) => {
-            console.error(err);
-          });
-      }
-
-      function pollen() {
-        fetch(
-          "https://api.ambeedata.com/latest/pollen/by-lat-lng?lat=12.9889055&lng=77.574044",
-          {
-            method: "GET",
-            headers: {
-              "x-api-key":
-                "0b6971e42ac3de1fc7283214f67e40a0638921c67ffee69fd130f4bd301f6e24",
-              "Content-type": "application/json",
-            },
-          }
-        )
-          .then((response) => {
-            console.log(response.json());
-          })
-          .catch((err) => {
-            console.error(err);
-          });
-      }
       function togglePopupAqi(){
         document.getElementById("air_quality").classList.toggle("active");
       }

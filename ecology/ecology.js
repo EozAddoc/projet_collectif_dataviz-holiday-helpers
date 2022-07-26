@@ -39,12 +39,12 @@ function searchBar(){
       lati =(z._renderer._center.lat)
       longi=(z._renderer._center.lng)
       console.log(lati)
-       return(z._renderer._center.lat, z._renderer._center.lng)
+       return(lati)
     })
     .addTo(map);
 }
- searchBar()
-
+ var no= searchBar()
+console.log(no)
 
 
 
