@@ -1,0 +1,30 @@
+*{
+    padding:0;
+    margin: 0;
+    font-family:'Regular 400','Serif';
+    box-sizing: border-box;
+    
+}
+
+h2{
+    margin-inline-end: 100px;
+    margin-top: 20px;
+    margin-left: 25px;
+    margin-bottom: 30px;
+    
+}
+.howtobe{
+    width: 100%;
+    padding: 78px 0px;
+    background-color: white;
+}
+.howtobe img {
+   height: auto;
+   width: 220px; 
+}
+.howtobe-text{
+    width: 550px;
+    text-align: left; 
+    color: #0d3d3a;
+    
+}
