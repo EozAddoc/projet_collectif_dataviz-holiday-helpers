@@ -7,12 +7,14 @@
 .about{
     width: 100%;
     padding: 78px 0px;
-    background-color: #191919;
+    background: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.548)),
+    url(foret.jpg);
 }
 .about img {
    height: auto;
    width: 220px; 
 }
+
 .about-text{
     width: 550px;
 }
@@ -67,11 +69,12 @@ button:hover{
 .aboutAssetou{
     width: 100%;
     padding: 78px 0px;
-    background-color: #191919;
+    background: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.548)),
+    url(image6.jpg);
 }
 .aboutAssetou img {
    height: auto;
-   width: 220px; 
+   width: 320px; 
 }
 .about-textAssetou{
     width: 550px;
@@ -127,7 +130,8 @@ button:hover{
 .aboutZ{
     width: 100%;
     padding: 78px 0px;
-    background-color: #191919;
+    background: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.548)),
+    url(image3.jpg);
 }
 .aboutZ img {
    height: auto;
