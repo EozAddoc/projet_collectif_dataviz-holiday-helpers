@@ -33,11 +33,12 @@
   <body onLoad="renderTime();">
     <banner>
       <div class="banner">
+          <div class="snow"></div> 
         <img
           src="logo.jpeg"
           class="logo"
-          width="100"
-          height="166"
+          width="80"
+          height="120"
           -webkit-border-radius:
           10px;
           -moz-border-radius:
@@ -127,7 +128,8 @@
         />
         <h1>Real Time Stats on ecology</h1>
       </div>
-      <partFour>
+    </partTwo>
+      <partThree>
         <div class ="traveler">
           <h1> How to be an Eco traveler</h1>
           <div class="move">
@@ -178,21 +180,33 @@
   
           </div>
           
-         
-
-          
-          
           <img
-          src="markers/autumnTree.png"
+          src="markers/bigTree.png"
           width="500"
           height="766"
-          style="position: relative; left:900px; bottom:480px"
+          style="position: relative; left:1000px; bottom:520px"
         />
         </div>
-      </partFour>
-    </partTwo>
+      </partThree>
+      <PartFour class="four">
+        <div class="leaves">
+          <img src="markers/leaf1.png" alt="">
+          <img src="markers/leaf2.png" alt="">
+          <img src="markers/leaf3.png" alt="">
+          <img src="markers/leaf4.png" alt="">
+          <img src="markers/leaf5.png" alt="">
+          <img src="markers/leaf6.png" alt="">
+          <img src="markers/leaf6.png" alt="">
+          <img src="markers/leaf3.png" alt="">
+          <img src="markers/leaf5.png" alt="">
+          <img src="markers/leaf1.png" alt="">
+          <img src="markers/leaf2.png" alt="">
+        </div>
+        <h1>Thank you  for your support and remember to have a happy vacation without the cost of the planet!</h1>
+      </PartFour>
 
-    <Fact>
+
+    <Fact class="Facts">
       <div class="Fact1">
         <script type="text/javascript" src="https://www.planetoscope.com/widget.php?id=96&f=1" style="bottom: 500px; left:500px"></script>
       </div>
@@ -207,8 +221,30 @@
       </div>
     </Fact>
 
-   
+    <Footer>
+      <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      <div class="footer_content">
+        
+        <ul class="social_icon">
+          <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+          <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></ion-icon></a></li>
+        </ul>
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact </a></li>
+        </ul>
+      </div>
+    </Footer>
 
+
+  
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
@@ -223,7 +259,6 @@
       crossorigin=""
     ></script>
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
-
     <script src="ecology.js"></script>
   </body>
 </html>

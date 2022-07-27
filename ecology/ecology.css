@@ -1,4 +1,5 @@
 /* map */
+
 #map { height: 500px;
 width: 800px ;
 position: relative;
@@ -29,19 +30,26 @@ left: 100px;
 .banner {
   width: 100%;
   height: 100vh;
-  display: flex;
   justify-content: center;
     align-items: center;
   background: 
     url(vacay/image7.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   position: relative;
+  overflow: hidden;
 } 
+
+
+.banner img{
+  position: relative;
+  bottom: 350px;
+}
 
  .banner h1 {
   width:100%;
   position: relative;
+  top:260px;
   left: 30px;
   font-size: 9vw;
 font-display: bold;
@@ -91,7 +99,10 @@ font-display: normal;
     text-align: left;
     font-family: 'Oswald', sans-serif
   }
-
+.Facts{
+  position: relative;
+  bottom: 1300px;
+}
    .Fact{
      position: relative;
      left: 1000px;
@@ -159,6 +170,11 @@ font-display: normal;
      top:120px
 
    }
+   .move ul p{
+     position: relative;
+    top: 10px;
+     left:10px
+   }
 
    .move ul h3{
      position: relative;
@@ -173,7 +189,193 @@ font-display: normal;
     position: relative;
     left: 20px;
    }
+.four{
+  position: relative;
+  bottom:30px;
+}
+.four h1{
+  width:100%;
+    position: relative;
+    left: 50px;
+    top: -550px;
+    font-size: 5vw;
+    font-display: bold;
+    color: black;
+    text-align: left;
+    font-family: 'Oswald', sans-serif
+
+}
+   .leaves{
+     position: absolute;
+     width: 100%;
+     bottom:750px;
+     left:540px
+   }
+   .leaves img{
+     width: 60px;
+     height: 60px ;
+     position: absolute;
+   }
+
+   .leaves img:nth-child(1){
+     left:20px;
+     animation: animate 12s linear infinite;
+   }
+   .leaves img:nth-child(2){
+    left:100px;
+    animation: animate 24s linear infinite;
+  }
+  .leaves img:nth-child(3){
+    left:200px;
+    animation: animate 19s linear infinite;
+  }
+  .leaves img:nth-child(4){
+    left:300px;
+    animation: animate 16s linear infinite;
+  }
+  .leaves img:nth-child(5){
+    left:400px;
+    animation: animate 9s linear infinite;
+  }
+  .leaves img:nth-child(6){
+    left:500px;
+    animation: animate 27s linear infinite;
+  }
+  .leaves img:nth-child(7){
+    left:250px;
+    animation: animate 5s linear infinite;
+  }
+  .leaves img:nth-child(8){
+    left:170px;
+    animation: animate 17s linear infinite;
+  }
+  .leaves img:nth-child(9){
+    left:3450px;
+    animation: animate 31s linear infinite;
+  }
+  .leaves img:nth-child(10){
+    left:560px;
+    animation: animate 14s linear infinite;
+  }
+  .leaves img:nth-child(11){
+    left:630px;
+    animation: animate 22s linear infinite;
+  }
+  .leaves img:nth-child(12){
+    left:720px;
+    animation: animate 18s linear infinite;
+  }
+  @keyframes animate{
+    0%{
+      top:-400px;
+      opacity:0;
+      transform: translateY(-20px),rotate(0deg);
+
+    }
+    10%{
+      opacity: 1;
+    }
+    60%{
+      transform: translateY(70px)rotate(180deg);
+    }
+    100%{
+      top:900px
+    }
+  }
+
+  footer{
+    position: relative;
+    width:100%;
+    background: #3586ff;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    bottom: 1500px;
+   
+
+  }
+  footer .social_icon, footer .menu{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
+  footer .social_icon li, footer .menu li{
+list-style: none;
+  }
+  footer .social_icon li a{
+    font-size: 2em;
+    color:#fff;
+    margin:0 10px;
+    display:inline-block ;
+    transition: 0.5s;
+  }
+
+  footer .social_icon li a :hover{
+    transform: translateY(-10px);
+  }
+
+  footer .menu li a{
+    font-size: 1.2em;
+    color:#fff;
+    margin:0 10px;
+    display:inline-block ;
+    text-decoration: none;
+
+  }
+  footer .wave{
+    position: absolute;
+  top:-100px;
+   left: 0;
+   width:100%;
+   height:100px;
+   background:url(markers/wave.png);
+   background-size: 1000px ;
+
+  }
+   footer .wave#wave1{
+    z-index: 1000;
+    opacity: 1;
+    bottom:0;
+    animation: animateWave 4s linear infinite;
+  }
+  footer .wave#wave2{
+    z-index: 999;
+    opacity: 0.5;
+    bottom:10px;
+    animation: animateWave_2 4s linear infinite;
+  }
+  footer .wave#wave3{
+    z-index: 1000;
+    opacity: 0.2;
+    bottom:15px;
+    animation: animateWave_3 3s linear infinite;
+  }
+  footer .wave#wave4{
+    z-index: 999;
+    opacity: 0.7;
+    bottom:20px;
+    animation: animateWave_4 3s linear infinite;
+  }
 
 
-
-
+ @keyframes animateWave{
+    0%{
+      background-position-x: 1000px;
+    }
+    100%{
+      background-position-x: 0px;
+    }
+  } 
+  @keyframes animateWave_2{
+    0%{
+      background-position-x: 0px;
+    }
+    100%{
+      background-position-x: 1000px;
+    }
+  } 

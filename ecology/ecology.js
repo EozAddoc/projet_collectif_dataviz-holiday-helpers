@@ -74,18 +74,21 @@ async function myPosition() {
     iconSize: [38, 40],
     iconAnchor: [22, 94],
 });
-
+marker.setLatLng([48.8768, 2.3592], {icon: myIcon});
+marker.bindPopup("Here you are!").openPopup();
 }
+
 //myPosition()
 
 async function aQI() {
+  console.log(_latitude)
   url = `https://api.ambeedata.com/latest/by-lat-lng?lat=${_latitude}&lng=${_longitude}`;
   const response = await fetch(url
   , {
     method: "GET",
     headers: {
       "x-api-key":
-        "0b6971e42ac3de1fc7283214f67e40a0638921c67ffee69fd130f4bd301f6e24",
+        "53dc19251c33293f1ad0355f6452d132bf571b126680c170c2562a4fddb522ef",
       "Content-type": "application/json",
     },
   });
@@ -94,8 +97,6 @@ async function aQI() {
   console.log(data);
   let aQI = await data.stations[0].aqiInfo.category;
   console.log(aQI);
-  let ozone = await data.stations[0].OZONE;
-  let city = await data.stations[0].city
   let coord = await data.stations[0];
   console.log(coord);
   const { lat, lng } = coord;
@@ -116,7 +117,7 @@ async function getMeteo() {
     method: "GET",
     headers: {
       "x-api-key":
-        "733803cf88f90a7486548ce9580f0cf1b52ae6e8746624ca4a795e3f2754c421",
+        "53dc19251c33293f1ad0355f6452d132bf571b126680c170c2562a4fddb522ef",
       "Content-type": "application/json",
     },
   });
@@ -130,7 +131,7 @@ async function getMeteo() {
     iconSize: [38, 95],
     iconAnchor: [22, 94],
 });
-marker.setLatLng([lat, lng]);
+marker.setLatLng([lat, lng], {icon: myIcon});
 marker.bindPopup(temperature.toString()).openPopup();
 }
 //air();
@@ -142,7 +143,7 @@ async function gHg() {
     method: "GET",
     headers: {
       "x-api-key":
-        "0b6971e42ac3de1fc7283214f67e40a0638921c67ffee69fd130f4bd301f6e24",
+        "53dc19251c33293f1ad0355f6452d132bf571b126680c170c2562a4fddb522ef",
       "Content-type": "application/json",
     },
   });
@@ -173,7 +174,7 @@ async function pollen(){
     method: "GET",
     headers: {
       "x-api-key":
-        "0b6971e42ac3de1fc7283214f67e40a0638921c67ffee69fd130f4bd301f6e24",
+        "53dc19251c33293f1ad0355f6452d132bf571b126680c170c2562a4fddb522ef",
       "Content-type": "application/json",
     },
   });
