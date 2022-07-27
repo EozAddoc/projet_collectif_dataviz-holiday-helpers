@@ -1,12 +1,13 @@
 var banner = document.querySelector("banner");
-var lati
-var longi
+var _latitude =0;
+var _longitude =0;
 //THe data
 const airAPi = " https://api.ambeedata.com/latest/by-lat-lng?lat=12&lng=77";
 const weatherAPi =
-  "https://api.ambeedata.com/weather/latest/by-lat-lng?lat=12&lng=17";
+"https://api.ambeedata.com/weather/latest/by-lat-lng?lat=12&lng=77"
+;
 const pollenApi =
-  "https://api.ambeedata.com/latest/pollen/by-lat-lng?lat=12&lng=17";
+  " https://api.ambeedata.com/latest/pollen/by-lat-lng?lat=12&lng=77";
 
 //Map stuff
 
@@ -36,20 +37,21 @@ function searchBar(){
         bbox.getSouthWest()
       ]).addTo(map);
       var z =map.fitBounds(poly.getBounds());
-      lati =(z._renderer._center.lat)
-      longi=(z._renderer._center.lng)
-      console.log(lati)
-       return(lati)
+      _latitude =(z._renderer._center.lat)
+      _longitude=(z._renderer._center.lng)
+      console.log("searchBar " + _latitude)
+       return(_latitude,_longitude)
     })
     .addTo(map);
 }
- var no= searchBar()
-console.log(no)
+searchBar()
+
 
 
 
 //markers
  let marker = L.marker([0, 0]).addTo(map);
+ 
 // //console.log(marker.getLatLng())
 
 
@@ -72,12 +74,14 @@ async function myPosition() {
     iconSize: [38, 40],
     iconAnchor: [22, 94],
 });
+
 }
 //myPosition()
 
-async function air(lati, longi) {
-  url = `https://api.ambeedata.com/latest/by-lat-lng?lat=${lati}&lng=${longi}`;
-  const response = await fetch(url, {
+async function aQI() {
+  url = `https://api.ambeedata.com/latest/by-lat-lng?lat=${_latitude}&lng=${_longitude}`;
+  const response = await fetch(url
+  , {
     method: "GET",
     headers: {
       "x-api-key":
@@ -102,12 +106,13 @@ async function air(lati, longi) {
     iconAnchor: [22, 94],
 });
   
-  new marker.setLatLng([lat, lng],{icon:myIcon});
+  marker.setLatLng([lat, lng],{icon:myIcon});
+  marker.bindPopup(aQI).openPopup();
 }
 //air();
 
 async function getMeteo() {
-  const res = await fetch(weatherAPi, {
+  const res = await fetch("https://api.ambeedata.com/weather/latest/by-lat-lng?lat=${_latitude}&lng=${_longitude}", {
     method: "GET",
     headers: {
       "x-api-key":
@@ -115,8 +120,9 @@ async function getMeteo() {
       "Content-type": "application/json",
     },
   });
-  const data = await res.json();
-  let temperature = await data.data.temperature;
+  let data = await res.json();
+ let temperature =data.data.temperature
+ console.log(temperature)
   let coord = await data.data;
   const { lat, lng } = coord;
   var myIcon = L.icon({
@@ -124,18 +130,15 @@ async function getMeteo() {
     iconSize: [38, 95],
     iconAnchor: [22, 94],
 });
-new marker.setLatLng([lat, lng]);
+marker.setLatLng([lat, lng]);
+marker.bindPopup(temperature.toString()).openPopup();
 }
-//getMeteo();
+//air();
 
-// async function flights() {
-//   
-// flights();
-
-async function pollen(lati, longi) {
-  console.log("hi")
-  url = `https://api.ambeedata.com/latest/pollen/by-lat-lng?lat=${lati}&lng=${longi}`;
-  const res = await fetch(url, {
+async function gHg() {
+  url = `https://api.ambeedata.com/latest/by-lat-lng?lat=${_latitude}&lng=${_longitude}`;
+  const response = await fetch("https://api.ambeedata.com/latest/by-lat-lng?lat=12&lng=77"
+  , {
     method: "GET",
     headers: {
       "x-api-key":
@@ -143,15 +146,56 @@ async function pollen(lati, longi) {
       "Content-type": "application/json",
     },
   });
-  const data = await res.json();
-  let risk = await data.data[0].Risk;
-  console.log(data)
-  const { lat, lng } = data;
-  
+
+  const data = await response.json();
+  console.log(data);
+  let ozone = await data.stations[0].OZONE;
+  let coord = await data.stations[0];
+  console.log(coord);
+  const { lat, lng } = coord;
  
-  new marker.setLatLng([lat, lng]);
+  var myIcon = L.icon({
+    iconUrl: 'markers/ozone.png',
+    iconSize: [38, 95],
+    iconAnchor: [22, 94],
+});
+  
+  marker.setLatLng([lat, lng],{icon:myIcon});
+  marker.bindPopup(ozone.toString()).openPopup();
+  
+
 }
 
+async function pollen(){
+  url = ` https://api.ambeedata.com/latest/pollen/by-lat-lng?lat=${_latitude}&lng=${_longitude}`;
+  const response = await fetch(url
+  , {
+    method: "GET",
+    headers: {
+      "x-api-key":
+        "0b6971e42ac3de1fc7283214f67e40a0638921c67ffee69fd130f4bd301f6e24",
+      "Content-type": "application/json",
+    },
+  });
+
+  const data = await response.json();
+  let risk = data.data[0].Risk.grass_pollen
+  console.log(risk)
+  console.log(data);
+  const {lat, lng} = data
+  
+ 
+  var myIcon = L.icon({
+    iconUrl: 'markers/pollen.png',
+    iconSize: [38, 95],
+    iconAnchor: [22, 94],
+});
+  
+marker.setLatLng([lat, lng],{icon:myIcon});
+marker.bindPopup(risk).openPopup();
+  
+
+}
 
 //getTime
 function renderTime() {

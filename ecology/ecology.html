@@ -53,6 +53,16 @@
         <div id="map"></div>
         <form class="form">
           <div class="form_item">
+            <input type="checkbox" id="checkboxair" name="checkbox" class="form_input" onclick="aQI()">
+            <label for="checkboxair" class="form_label">
+              <div class="form_content">
+                <img id="air"  src="markers/co2.png" alt="" class="form_img">
+                <span class="form_name">co2</span>
+              </div>
+            </label>
+          </div>
+        <form class="form">
+          <div class="form_item">
             <input type="checkbox" id="checkboxPollen" name="checkbox" class="form_input" onclick="pollen()">
             <label for="checkboxPollen" class="form_label">
               <div class="form_content">
@@ -63,10 +73,10 @@
           </div>
           <form class="form">
             <div class="form_item">
-              <input type="checkbox" id="checkboxco2" name="checkbox" class="form_input" onclick="air(12,77)">
+              <input type="checkbox" id="checkboxco2" name="checkbox" class="form_input" onclick="gHg()">
               <label for="checkboxco2" class="form_label">
                 <div class="form_content">
-                  <img id="GHG"  src="markers/co2.png" alt="" class="form_img">
+                  <img id="GHG"  src="markers/ozone.png" alt="" class="form_img">
                   <span class="form_name">Green House Gas</span>
                 </div>
               </label>
@@ -90,17 +100,6 @@
                       <span class="form_name">Temperature</span>
                     </div>
                   </label>
-                  <form class="form">
-                    <div class="form_item">
-                      <input type="checkbox" id="checkboxairplane" name="checkbox" class="form_input">
-                      <label for="checkboxairplane" class="form_label">
-                        <div class="form_content">
-                          <img id="airplane"  src="markers/airplane.png" alt="" class="form_img">
-                          <span class="form_name">Flights</span>
-                        </div>
-                      </label>
-                    </div>
-                </div>
         </form>
       </div>
     </partOne>
