@@ -40,7 +40,7 @@
     letter-spacing: 2px;
 }
 span{
-    color: #f9004d;
+    color: #286607;
 }
 .about-text p{
     color: #fcfcfc;
@@ -50,7 +50,7 @@ span{
     margin-bottom: 45px;
 }
 button{
-    background: #f9004d;
+    background: #286607;
     color: white;
     text-decoration: none;
     border: 2px solid transparent;
@@ -61,7 +61,7 @@ button{
 }
 button:hover{
     background: transparent;
-    border: 2px solid #f9004d;
+    border: 2px solid #286607;
     cursor: pointer;
 
 }
@@ -101,7 +101,7 @@ button:hover{
     letter-spacing: 2px;
 }
 span{
-    color: #f9004d;
+    color: #286607;
 }
 .about-textAssetou p{
     color: #fcfcfc;
@@ -111,7 +111,7 @@ span{
     margin-bottom: 45px;
 }
 button{
-    background: #f9004d;
+    background: #286607;
     color: white;
     text-decoration: none;
     border: 2px solid transparent;
@@ -122,7 +122,7 @@ button{
 }
 button:hover{
     background: transparent;
-    border: 2px solid #f9004d;
+    border: 2px solid #286607;
     cursor: pointer;
 
 }
@@ -162,7 +162,7 @@ button:hover{
     letter-spacing: 2px;
 }
 span{
-    color: #f9004d;
+    color: #286607;
 }
 .about-textZ p{
     color: #fcfcfc;
