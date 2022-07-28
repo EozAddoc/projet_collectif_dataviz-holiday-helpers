@@ -50,15 +50,11 @@ searchBar()
 
 
 //markers
+
  let marker = L.marker([0, 0]).addTo(map);
  
 // //console.log(marker.getLatLng())
 
-
-
-
-
- 
 //Geolocalisation
 async function myPosition() {
   const lat = navigator.geolocation.watchPosition((position) => {
@@ -72,12 +68,12 @@ async function myPosition() {
   var myIcon = L.icon({
     iconUrl: 'markers/street.png',
     iconSize: [38, 40],
-    iconAnchor: [22, 94],
+    iconAnchor: [22, 14],
 });
+marker.setIcon(myIcon)
 marker.setLatLng([48.8768, 2.3592], {icon: myIcon});
 marker.bindPopup("Here you are!").openPopup();
 }
-
 //myPosition()
 
 async function aQI() {
@@ -103,17 +99,21 @@ async function aQI() {
  
   var myIcon = L.icon({
     iconUrl: 'markers/co2.png',
-    iconSize: [38, 95],
-    iconAnchor: [22, 94],
+    iconSize: [38, 40],
+    iconAnchor: [22, 14],
 });
   
-  marker.setLatLng([lat, lng],{icon:myIcon});
+  marker.setIcon(myIcon)
+  marker.setLatLng([lat, lng]);
   marker.bindPopup(aQI).openPopup();
+
+
+  map.addLayer(marker)
 }
 //air();
 
 async function getMeteo() {
-  const res = await fetch("https://api.ambeedata.com/weather/latest/by-lat-lng?lat=${_latitude}&lng=${_longitude}", {
+  const res = await fetch('https://api.ambeedata.com/weather/latest/by-lat-lng?lat=${_latitude}&lng=${_longitude}', {
     method: "GET",
     headers: {
       "x-api-key":
@@ -122,16 +122,19 @@ async function getMeteo() {
     },
   });
   let data = await res.json();
+  console.log(data)
  let temperature =data.data.temperature
  console.log(temperature)
   let coord = await data.data;
+  console.log(coord)
   const { lat, lng } = coord;
   var myIcon = L.icon({
     iconUrl: 'markers/hot.png',
-    iconSize: [38, 95],
-    iconAnchor: [22, 94],
+    iconSize: [38, 40],
+    iconAnchor: [22, 14],
 });
-marker.setLatLng([lat, lng], {icon: myIcon});
+marker.setIcon(myIcon)
+marker.setLatLng([_latitude, _longitude]);
 marker.bindPopup(temperature.toString()).openPopup();
 }
 //air();
@@ -157,11 +160,12 @@ async function gHg() {
  
   var myIcon = L.icon({
     iconUrl: 'markers/ozone.png',
-    iconSize: [38, 95],
-    iconAnchor: [22, 94],
+    iconSize: [38, 40],
+    iconAnchor: [22, 14],
 });
   
-  marker.setLatLng([lat, lng],{icon:myIcon});
+ marker.setIcon(myIcon)
+  marker.setLatLng([_latitude, _longitude]);
   marker.bindPopup(ozone.toString()).openPopup();
   
 
@@ -188,11 +192,11 @@ async function pollen(){
  
   var myIcon = L.icon({
     iconUrl: 'markers/pollen.png',
-    iconSize: [38, 95],
-    iconAnchor: [22, 94],
+    iconSize: [38, 40],
+    iconAnchor: [22, 14],
 });
-  
-marker.setLatLng([lat, lng],{icon:myIcon});
+marker.setIcon(myIcon)
+marker.setLatLng([lat, lng]);
 marker.bindPopup(risk).openPopup();
   
 
